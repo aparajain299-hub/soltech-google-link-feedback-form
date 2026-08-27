@@ -48,9 +48,6 @@ export function GoogleReviewCard() {
         </a>
 
         {!configured ? (
-          <p className="mt-3 text-xs text-muted-foreground">
-            Review link coming soon — set VITE_GOOGLE_REVIEW_URL to activate.
-          </p>
         ) : null}
       </section>
 
