@@ -12,9 +12,14 @@ export function GoogleReviewCard() {
   return (
     <div className="space-y-7">
       <section className="rounded-2xl border border-border bg-secondary/40 px-5 py-6 text-center shadow-[var(--shadow-soft)] sm:px-7">
-        <h2 className="font-display text-lg font-semibold text-foreground">Google Reviews</h2>
+        <h2 className="font-display text-lg font-semibold text-foreground">
+          Google Reviews
+        </h2>
 
-        <div className="mt-3 flex items-center justify-center gap-1.5" aria-hidden="true">
+        <div
+          className="mt-3 flex items-center justify-center gap-1.5"
+          aria-hidden="true"
+        >
           {STARS.map((i) => (
             <Star
               key={i}
@@ -24,7 +29,10 @@ export function GoogleReviewCard() {
             />
           ))}
         </div>
-        <span className="sr-only">Five star rating illustration</span>
+
+        <span className="sr-only">
+          Five star rating illustration
+        </span>
 
         <a
           href={configured ? GOOGLE_REVIEW_URL : undefined}
@@ -32,7 +40,9 @@ export function GoogleReviewCard() {
           rel="noopener noreferrer"
           aria-disabled={!configured}
           onClick={(e) => {
-            if (!configured) e.preventDefault();
+            if (!configured) {
+              e.preventDefault();
+            }
           }}
           className={[
             "mt-6 inline-flex h-13 w-full items-center justify-center gap-2 rounded-xl",
@@ -48,34 +58,36 @@ export function GoogleReviewCard() {
         </a>
       </section>
 
-     <div className="mt-2 flex items-center justify-between gap-5 rounded-2xl border border-border bg-secondary/20 px-5 py-4">
-  {/* Left side */}
-  <div className="min-w-0 text-left">
-    <p className="text-base font-medium text-foreground">
-      Prefer to scan?
-    </p>
+      {/* Compact QR section */}
+      <div className="flex items-center justify-between gap-5 rounded-2xl border border-border bg-secondary/20 px-5 py-4">
+        {/* Left side */}
+        <div className="min-w-0 text-left">
+          <p className="text-base font-medium text-foreground">
+            Prefer to scan?
+          </p>
 
-    <p className="mt-1 text-xs text-muted-foreground">
-      Scan to review us on Google
-    </p>
-  </div>
+          <p className="mt-1 text-xs text-muted-foreground">
+            Scan to review us on Google
+          </p>
+        </div>
 
-  {/* Right side - QR code */}
-  <div className="flex shrink-0 items-center justify-center rounded-xl border border-border bg-card p-2 shadow-[var(--shadow-soft)]">
-    {configured ? (
-      <QRCodeSVG
-        value={GOOGLE_REVIEW_URL}
-        size={80}
-        level="M"
-        bgColor="transparent"
-        fgColor="#1b2a4a"
-      />
-    ) : (
-      <div className="flex size-20 items-center justify-center rounded-lg bg-secondary/60 px-2 text-center text-[10px] leading-snug text-muted-foreground">
-        QR code
+        {/* Right side - QR code */}
+        <div className="flex shrink-0 items-center justify-center rounded-xl border border-border bg-card p-2 shadow-[var(--shadow-soft)]">
+          {configured ? (
+            <QRCodeSVG
+              value={GOOGLE_REVIEW_URL}
+              size={80}
+              level="M"
+              bgColor="transparent"
+              fgColor="#1b2a4a"
+            />
+          ) : (
+            <div className="flex size-20 items-center justify-center rounded-lg bg-secondary/60 px-2 text-center text-[10px] leading-snug text-muted-foreground">
+              QR code
+            </div>
+          )}
+        </div>
       </div>
-    )}
-  </div>
-</div>
+    </div>
   );
 }
