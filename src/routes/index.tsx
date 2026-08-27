@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { X } from "lucide-react";
 
-import logoAsset from "@/assets/soltech-logo.png.asset.json";
 import { GoogleReviewCard } from "@/components/GoogleReviewCard";
 
 export const Route = createFileRoute("/")({
