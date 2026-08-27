@@ -26,10 +26,6 @@ export function GoogleReviewCard() {
         </div>
         <span className="sr-only">Five star rating illustration</span>
 
-        <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-          Share your honest experience with Soltech Energy on Google.
-        </p>
-
         <a
           href={configured ? GOOGLE_REVIEW_URL : undefined}
           target="_blank"
@@ -48,7 +44,6 @@ export function GoogleReviewCard() {
             "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background outline-none",
           ].join(" ")}
         >
-          <Star className="size-5 text-accent" fill="currentColor" strokeWidth={1.5} aria-hidden="true" />
           Review us on Google
         </a>
 
