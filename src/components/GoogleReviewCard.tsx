@@ -46,9 +46,6 @@ export function GoogleReviewCard() {
         >
           Review us on Google
         </a>
-
-        {!configured ? (
-        ) : null}
       </section>
 
      <div className="mt-2 flex items-center justify-between gap-5 rounded-2xl border border-border bg-secondary/20 px-5 py-4">
