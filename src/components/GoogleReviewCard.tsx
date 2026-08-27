@@ -51,25 +51,34 @@ export function GoogleReviewCard() {
         ) : null}
       </section>
 
-      <div className="flex flex-col items-center text-center">
-        <p className="text-sm font-medium text-foreground">Prefer to scan?</p>
-        <div className="mt-3 rounded-2xl border border-border bg-card p-3 shadow-[var(--shadow-soft)]">
-          {configured ? (
-            <QRCodeSVG
-              value={GOOGLE_REVIEW_URL}
-              size={132}
-              level="M"
-              bgColor="transparent"
-              fgColor="#1b2a4a"
-            />
-          ) : (
-            <div className="flex size-[132px] items-center justify-center rounded-lg bg-secondary/60 px-3 text-center text-[11px] leading-snug text-muted-foreground">
-              QR code appears once the Google review link is configured
-            </div>
-          )}
-        </div>
-        <p className="mt-3 text-xs text-muted-foreground">Scan to review us on Google</p>
+     <div className="mt-2 flex items-center justify-between gap-5 rounded-2xl border border-border bg-secondary/20 px-5 py-4">
+  {/* Left side */}
+  <div className="min-w-0 text-left">
+    <p className="text-base font-medium text-foreground">
+      Prefer to scan?
+    </p>
+
+    <p className="mt-1 text-xs text-muted-foreground">
+      Scan to review us on Google
+    </p>
+  </div>
+
+  {/* Right side - QR code */}
+  <div className="flex shrink-0 items-center justify-center rounded-xl border border-border bg-card p-2 shadow-[var(--shadow-soft)]">
+    {configured ? (
+      <QRCodeSVG
+        value={GOOGLE_REVIEW_URL}
+        size={80}
+        level="M"
+        bgColor="transparent"
+        fgColor="#1b2a4a"
+      />
+    ) : (
+      <div className="flex size-20 items-center justify-center rounded-lg bg-secondary/60 px-2 text-center text-[10px] leading-snug text-muted-foreground">
+        QR code
       </div>
-    </div>
+    )}
+  </div>
+</div>
   );
 }
