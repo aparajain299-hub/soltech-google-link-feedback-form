@@ -48,8 +48,7 @@ function ReviewPage() {
 
           <header className="flex flex-col items-center px-6 pt-9 pb-6 text-center sm:px-8">
             <img
-              src={logoAsset.url}
-              alt="Soltech Energy"
+              src="/soltech-logo.png" alt="Soltech Energy"
               width={512}
               height={512}
               className="size-14 object-contain"
